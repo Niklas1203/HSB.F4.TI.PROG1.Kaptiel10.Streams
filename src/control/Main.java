@@ -13,6 +13,8 @@ public class Main {
     public static void main(String[] args)
     {
         informieren();
+        char[] array = TextReader.einlesen();
+        WortSpeicherController.init(array);
     }
 
     private static void informieren() 
