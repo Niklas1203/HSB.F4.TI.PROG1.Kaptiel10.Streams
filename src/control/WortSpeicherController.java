@@ -45,8 +45,6 @@ public class WortSpeicherController
             }
             else
             {
-                System.out.println(wort);
-                System.out.println(anzahl);
                 treemap.put(wort, anzahl);
                 anzahl = 1;
                 wort = arraylist.get(i + 1);
