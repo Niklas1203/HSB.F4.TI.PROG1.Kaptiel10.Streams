@@ -12,5 +12,5 @@ package control;
 public interface Konstanten 
 {
     public static final String INFORMATIONS_TEXT = String.format("Guten Tag, %Sdieses Programm liest den Text einer Datei ein und gibt die enthaltenen Worte zurück. %S", "\n", "\n");
-    public static final String TEXTQUELLE = "C:\\Users\\Niklas\\Documents\\NetBeansProjects\\HSB.F4.TI.PROG1.Kaptiel10.Streams\\src\\resources\\TextDokument";
+    public static final String TEXTQUELLE = "src/resources/TextDokument";
 }
