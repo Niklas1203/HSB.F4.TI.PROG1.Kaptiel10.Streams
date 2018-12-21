@@ -30,15 +30,29 @@ public class WortSpeicherController
         System.out.println(fuelleTreeMapMitArrayList(worte));
     }
     
-    private static TreeMap<Integer, String> fuelleTreeMapMitArrayList(ArrayList<String> arraylist)
+    private static TreeMap<String, Integer> fuelleTreeMapMitArrayList(ArrayList<String> arraylist)
     {
-        TreeMap<Integer, String> treemap = new TreeMap<>();
-        int key = 0;
+        TreeMap<String, Integer> treemap = new TreeMap<>();
+        String wort = arraylist.get(0);
+        int anzahl = 1;
         
-        for(String wort : arraylist)
+        for(int i = 0; i < arraylist.size() - 1; i++)
         {
-            treemap.put(key++, wort);
+            if(arraylist.get(i + 1).equals(wort))
+            {
+                anzahl++;
+                wort = arraylist.get(i + 1);
+            }
+            else
+            {
+                System.out.println(wort);
+                System.out.println(anzahl);
+                treemap.put(wort, anzahl);
+                anzahl = 1;
+                wort = arraylist.get(i + 1);
+            }
         }
+        treemap.put(wort, anzahl);
         return treemap;
     }
     
@@ -58,6 +72,10 @@ public class WortSpeicherController
                 worte.add(meinStringBuilder.toString());
                 meinStringBuilder.delete(0, meinStringBuilder.length());
             }
+        }
+        if(meinStringBuilder.length() > 0)
+        {
+            worte.add(meinStringBuilder.toString());
         }
         return worte;
     }
